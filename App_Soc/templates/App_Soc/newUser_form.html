@@ -1,0 +1,21 @@
+{% extends "App_Soc/base.html" %}
+
+{% block title %}
+    New User Form
+{% endblock %}
+
+{% block content %}
+    <h1>Add New User</h1>
+    <h3>Please enter the information below:</h3><br><br><br><br>
+    {% if submitted %}
+        User registered successfully!
+    {% else %}
+        <form action="" method=POST>
+            {% csrf_token %}
+            {{ form.as_p}}
+{#            <input type="submit" value="Add" class="btn btn-secondary">#}
+            <button type="submit" class="btn"><b>Add</b></button>
+        </form>
+    {% endif %}
+
+{% endblock %}

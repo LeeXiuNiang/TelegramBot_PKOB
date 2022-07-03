@@ -1,0 +1,20 @@
+{% extends "App_Soc/base.html" %}
+
+{% block title %}
+    {{ user.ic_no }}
+{% endblock %}
+
+{% block content %}
+    <h1>Delete User</h1>
+{#    <h3>The user details are as follow.</h3><br><br><br><br>#}
+    <h3>Are you sure you want to delete this user?</h3><br><br><br><br>
+    <h2>IC Number :</h2><br>
+    <p>{{ user.ic_no }}</p><br><br>
+    <h2>Name :</h2><br>
+    <p>{{ user.name }}</p><br><br>
+    <h2>Phone :</h2><br>
+    <p>{{ user.phone_no }}</p><br><br><br><br>
+    <button type="submit" class="btn" style="background-color: red" onclick="location.href='{% url 'delete-user' user.ic_no%}';"><b>Delete</b></button>
+    <button type="submit" class="btn" onclick="location.href='{% url 'manage-user' %}';"><b>Cancel</b></button>
+
+{% endblock %}
